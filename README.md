@@ -8,13 +8,12 @@ the transliteration using `<ruby>` tag.
 ![](./screenshot.gif)
 
 
-[Install the script][0]
+[Install the script](./wikipedia_kana_romanizer.user.js)
 --------------------------------------------------------
 
 It requires [Greasemonkey][1] on Firefox and [Tampermonkey][2] on
 Chrome/Safari/Opera/Edge.
 
-[0]: https://github.com/dahlia/wikipedia-kana-romanizer/raw/master/wikipedia_kana_romanizer.user.js
 [1]: http://www.greasespot.net/
 [2]: https://tampermonkey.net/
 
