@@ -3,7 +3,7 @@
 // @namespace   https://github.com/dahlia/wikipedia-kana-romanizer
 // @description Romanize hiragana/katakana in Wikipedia
 // @match       https://*.wikipedia.org/*
-// @version     2
+// @version     3
 // @grant       none
 // ==/UserScript==
 
@@ -410,7 +410,7 @@
     'SECTION', 'SHADOW', 'SMALL', 'SPAN', 'STRIKE', 'STRONG',
     'SUB', 'SUMMARY', 'SUP', 'TABLE', 'TBODY', 'TD', 'TFOOT',
     'TH', 'THEAD', 'TIME', 'TR', 'TT', 'U', 'UL', 'XMP',
-];
+  ];
   const transformNode = function (node) {
     if (node.nodeType == 3) {
     }
@@ -437,7 +437,12 @@
       }
     }
   };
-  document.addEventListener('DOMContentLoaded', function () {
+  var initialized = false;
+  const initialize = function () {
+    if (initialized || document.readyState == 'loading') {
+      return;
+    }
+    initialized = true;
     document.body.innerHTML += (
       '<style>' +
       '.w-k-r > rt { display: none; text-transform: uppercase; opacity: 0.5; }' +
@@ -446,5 +451,8 @@
       '</style>'
     );
     transformNode(document.body);
-  });
+  };
+  document.addEventListener('DOMContentLoaded', initialize);
+  document.addEventListener('readystatechange', initialize);
+  initialize();
 })();
