@@ -2,8 +2,8 @@
 // @name        Wikipedia kana romanizer
 // @namespace   https://github.com/dahlia/wikipedia-kana-romanizer
 // @description Romanize hiragana/katakana in Wikipedia
-// @include     https://*.wikipedia.org/*
-// @version     1
+// @match       https://*.wikipedia.org/*
+// @version     2
 // @grant       none
 // ==/UserScript==
 
